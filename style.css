@@ -1,0 +1,27 @@
+/* p{
+            background-color: gray;
+        } */
+
+        /* #lorem{
+            background-color: green;
+        } */
+
+        #bebas{
+            background-color: #FF7F3E;
+        }
+
+        .primary-color{
+            color: green;
+        }
+
+        .secondary-color{
+            color: white;
+        }
+
+        .bg-primary-color{
+            background-color: green; 
+        }
+
+        .bg-secondary-color{
+            background-color: white;
+        }
