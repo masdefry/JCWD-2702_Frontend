@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Intro to HTML</title>
+    <style>
+        body{
+            margin-left: 100px;
+        }
+
+        table, tr, td{
+            border: 5px solid salmon;
+        }
+    </style>
 </head>
 <body>
     <!-- 
@@ -53,5 +62,132 @@
             <li>BSD</li>
             <li>JKT</li>
          </ol>
+
+         <!-- 
+            Table
+          -->
+          <table>
+            <th>
+                <tr>
+                    <td>
+                        No.
+                    </td>
+                    <td>
+                        Name
+                    </td>
+                    <td>
+                        Address
+                    </td>
+                </tr>
+            </th>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Defryan</td>
+                    <td
+                    >Bogor Bogor Bogor Bogor Bogor Bogor Bogor Bogor</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Aboy</td>
+                    <td>Bintaro</td>
+                </tr>
+            </tbody>
+          </table>
+
+          <!-- 
+            Anchor Tag
+           -->
+           <a href="https://www.google.com">
+            Klik Link Ini
+           </a>
+           <a href="./relative.html" target="_blank">
+            Klik Link Ini
+           </a>
+
+           <!-- 
+            Images Tag
+            -->
+            <img 
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF1IwK6-SxM83UpFVY6WtUZxXx-phss_gAUfdKbkTfau6VWVkt"
+                alt="Gambar Kucing"
+                width="200"
+                height="200"
+            />
+
+            <!-- 
+                Figure Tag
+             -->
+             <figure>
+                <img src="./images.jpg" />
+                <figcaption>
+                    Ini Gambar Kucing
+                </figcaption>
+             </figure>
+
+             <!-- 
+                Form Tag
+              -->
+              <h1>
+                Register
+              </h1>
+              <form action="" method="post">
+                <input type="text" placeholder="Enter your username" />
+                <input type="number" placeholder="Enter your phone number" />
+                <input type="password" placeholder="Enter your password" required />
+                <input type="email" placeholder="Enter your email" required />
+                <button type="submit">
+                    Register
+                </button>
+              </form>
+
+              <!-- 
+                Select Option Tag
+               -->
+               <p>Select Your Program</p>
+               <select>
+                <option>JCWD</option>
+                <option>JCDS</option>
+               </select>
+
+               <!-- 
+                Radio Button
+                -->
+                <input type="radio" name="status" /> Married
+                <input type="radio" name="status" /> Single
+
+                <!-- 
+                    Checbox
+                 -->
+                    <input type="checkbox" /> Married
+                    <input type="checkbox" /> Single
+                 <br /><br /><br />
+                <!-- 
+                    Label & Fieldset
+                 -->
+                 <fieldset>
+                    <div>
+                        <label>
+                            Username 
+                        </label>
+                        <input type="text" />
+                    </div>
+
+                    <div>
+                        <label>
+                            Password 
+                         </label>
+                         <input type="password" />
+                    </div>
+                 </fieldset>
+          <br /><br /><br /><br /><br />
+          <br /><br /><br /><br /><br />
+          <br /><br /><br /><br /><br />
+          <br /><br /><br /><br /><br />
+          <br /><br /><br /><br /><br />
+          <br /><br /><br /><br /><br />
+          <br /><br /><br /><br /><br />
+          <br /><br /><br /><br /><br />
+          <br /><br /><br /><br /><br />
 </body>
 </html>
