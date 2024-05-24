@@ -1,0 +1,48 @@
+#box-01{
+    width: 100px;
+    height: 100px;
+    background-color: salmon;
+}
+
+#box-02{
+    width: 100px;
+    height: 100px;
+    background-color: slateblue;
+    position: relative;
+    top: 10px;
+    left: 50px;
+}
+
+#box-03{
+    width: 100px;
+    height: 100px;
+    background-color: violet;
+}
+
+#box-04{
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+}
+
+#box-05{
+    width: 100px;
+    height: 100px;
+    background-color: orangered;
+    position: absolute;
+    top: 10px;
+}
+
+#box-06{
+    width: 100px;
+    height: 100px;
+    background-color: green;
+}
+
+#box-07{
+    width: 100%;
+    height: 100px;
+    background-color: black;
+    position: fixed;
+    top: 0px;
+}
