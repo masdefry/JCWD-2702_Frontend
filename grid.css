@@ -61,7 +61,6 @@
 
 
 
-
 #head{
     display: grid;
     grid-template-columns: repeat(9, 1fr);
@@ -93,3 +92,29 @@
     grid-row: 2/4;
 }
 
+
+
+
+#main{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    margin-top: 100px;
+    gap: 30px;
+}
+
+#main > div:nth-child(odd){
+    background-color: antiquewhite;
+}
+
+#main > div:nth-child(even){
+    background-color: brown;
+}
+
+#main > #first{
+    grid-row: 1/4;
+}
+
+#main > #second{
+    grid-column: 2/4;
+}
