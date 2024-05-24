@@ -1,0 +1,20 @@
+#wrapper{
+    display: flex;
+    flex-direction: column;
+    background-color: silver;
+    height: 500px; 
+    justify-content: center;
+    align-items: end;
+}
+
+#wrapper > div:nth-child(odd){
+    width: 100px;
+    height: 100px;
+    background-color: aquamarine;
+}
+
+#wrapper > div:nth-child(even){
+    width: 100px;
+    height: 100px;
+    background-color: goldenrod;
+}
