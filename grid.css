@@ -1,0 +1,31 @@
+#wrapper{
+    display: grid;
+    gap: 25px;
+    grid-template-columns: 1fr 2fr 1fr;
+    background-color: gray;
+}
+
+#wrapper > div:nth-child(even){
+    height: 100px;
+    background-color: salmon;
+}
+
+#wrapper > div:nth-child(odd){
+    height: 100px;
+    background-color: slateblue;
+}
+
+#parent{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 2fr 3fr;
+    margin-top: 100px;
+}
+
+#parent > div:nth-child(even){
+    background-color: salmon;
+}
+
+#parent > div:nth-child(odd){
+    background-color: slateblue;
+}
