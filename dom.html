@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="pwd">
+        Purwadhika
+    </h1>
+    <h1 class="pwd">
+        School
+    </h1>
+    <button onclick="ChangePurwadhika()">
+        Click
+    </button>
+    
+    <div style="margin-top: 10px;">
+        <input type="text" class="inputs" placeholder="Username" />
+        <input type="password" class="inputs" placeholder="Password" />
+        <button onclick="OnSubmit()">
+            Submit
+        </button>
+    </div>
+
+    <!-- Block Element: Width: 100%, Height: Following Content
+    <h1 style="background-color: aquamarine;">
+        Purwadhika 
+    </h1>
+    <h1>
+        BSD
+    </h1>
+
+    Inline Element: Width: Following Content, Height: Following Content
+    <span style="background-color: yellow;">
+        PWD
+    </span>
+    <span>
+        BDG
+    </span> -->
+</body>
+</html>
+
+<script>
+    
+    function ChangePurwadhika(){
+        document.getElementsByClassName('pwd')[0].innerHTML = 'PWD' 
+    }
+
+    function OnSubmit(){
+        console.log(document.getElementsByClassName('inputs')[0].value)
+        console.log(document.getElementsByClassName('inputs')[1].value)
+    }
+</script>
