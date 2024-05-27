@@ -1,0 +1,27 @@
+body{
+    margin: 0px;
+}
+
+#navbar{
+    display: flex;
+    background-color: blue;
+    padding: 0px 30px;
+    align-items: center;
+    color: white;
+}
+
+#navbar > #menu{
+    display: flex;
+    gap: 10px;
+    flex: 4;
+}
+
+#navbar > #logo{
+    flex: 1;
+}
+
+#navbar > #search{
+    flex: 1;
+    display: flex;
+    justify-content: end;
+}
