@@ -1,14 +1,31 @@
 import './index.css';
 import Card from '../../components/home/card';
 
+const dataProgram = [
+    {
+        programName: 'Visual Design'
+    },
+    {
+        programName: 'Web Development'
+    },
+    {
+        programName: 'UI/UX'
+    },
+    {
+        programName: 'Digital Marketing'
+    }
+]
 export default function HomePage(){
     return(
         <>
             <div id='program'>
-                <Card programName='Visual Design' description='Abc' />
-                <Card programName='Web Development' description='Abc' />
-                <Card programName='Digital Marketing' description='Abc' />
-                <Card programName='UI/UX' description='Abc' />
+                {
+                    dataProgram.map(item => {
+                        return(
+                            <Card programName={item.programName} />
+                        )
+                    })
+                }
             </div>
         </>
     )

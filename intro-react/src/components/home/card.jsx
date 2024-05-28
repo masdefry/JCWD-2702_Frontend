@@ -24,7 +24,7 @@ export default function Card(props){
                 </div>
             </div>
             <p>
-                {props.description}
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore rem ullam alias itaque nihil provident dolores, accusantium, quibusdam, deserunt autem laboriosam modi assumenda aliquam ad quasi placeat. Nesciunt, omnis nostrum?
             </p>
             <button style={{ backgroundColor: 'black', color: 'white', border: 'none', width: '100%' }}>
                 Hubungi Kami 
