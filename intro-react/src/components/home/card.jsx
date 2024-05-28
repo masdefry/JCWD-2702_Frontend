@@ -3,7 +3,7 @@ export default function Card(props){
         <div id='card'>
             <div style={{ width: '100%', height: '200px' }}>
                 <img
-                    src='https://cms.purwadhika.com/uploads/jc_landing_cards_vd_17d4318691.jpg'
+                    src={props.imageUrl}
                     width={'100%'}
                     height={'100%'}
                     style={{ objectFit: 'cover', borderRadius: '10px' }}

@@ -3,7 +3,8 @@ import Card from '../../components/home/card';
 
 const dataProgram = [
     {
-        programName: 'Visual Design'
+        programName: 'Visual Design', 
+        imageUrl: '...'
     },
     {
         programName: 'Web Development'
@@ -22,7 +23,7 @@ export default function HomePage(){
                 {
                     dataProgram.map(item => {
                         return(
-                            <Card programName={item.programName} />
+                            <Card programName={item.programName} imageUrl={item.imageUrl} />
                         )
                     })
                 }
