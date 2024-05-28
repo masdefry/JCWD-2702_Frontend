@@ -1,0 +1,11 @@
+#program{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 100vw;
+}
+
+#program > #card{
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 15px 15px;
+}

@@ -7,6 +7,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 // Pages
 import ProfilePage from './pages/profile'
 import AdminPage from './pages/admin'
+import HomePage from './pages/home/index.jsx'
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/', 
+        element: <HomePage />
+      },
+      {
+        path: '/profile', 
         element: <ProfilePage />
       }, 
       {
