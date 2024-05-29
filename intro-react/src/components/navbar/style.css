@@ -1,0 +1,39 @@
+/* Mobile */
+#navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: antiquewhite;
+}
+
+#navbar > #center{
+    display: none;
+}
+
+#navbar > #right > button{
+    display: none;
+}
+
+/* Desktop */
+@media only screen and (min-width: 1200px) {
+    #navbar{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 30px;
+    }
+    
+    #navbar > #center{
+        display: flex;
+        gap: 10px;
+    }
+
+    #navbar > #right > button{
+        display: block;
+    }
+
+    #navbar > #right > p{
+        display: none;
+    }
+}
+

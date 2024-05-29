@@ -1,13 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
-import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 // Pages
 import ProfilePage from './pages/profile'
 import AdminPage from './pages/admin'
 import HomePage from './pages/home/index.jsx'
+import ExerciseResponsivePage from './pages/exercise-responsive/index.jsx'
 
 const router = createBrowserRouter([
   {
@@ -24,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: '/admin', 
         element: <AdminPage />
+      },
+      {
+        path: '/exercise-responsive', 
+        element: <ExerciseResponsivePage />
       }
     ]
   }
