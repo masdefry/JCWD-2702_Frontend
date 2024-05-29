@@ -8,6 +8,7 @@ import ProfilePage from './pages/profile'
 import AdminPage from './pages/admin'
 import HomePage from './pages/home/index.jsx'
 import ExerciseResponsivePage from './pages/exercise-responsive/index.jsx'
+import DetailCardPage from './pages/detail-card/index.jsx'
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: '/exercise-responsive', 
         element: <ExerciseResponsivePage />
+      }, 
+      {
+        path: '/detail-card/:productName', 
+        element: <DetailCardPage />
       }
     ]
   }
