@@ -59,5 +59,5 @@ Hello, JCWD-2802 Student(s)!
             4. Create Page(s) and Register to "main.jsx" Routers
 
 - How to Install Tailwind CSS?
-
-            1. 
+  
+           https://tailwindcss.com/docs/guides/vite
