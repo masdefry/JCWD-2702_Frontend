@@ -12,6 +12,7 @@ import ExerciseResponsivePage from './pages/exercise-responsive/index.jsx'
 import DetailCardPage from './pages/detail-card/index.jsx'
 import TailwindCSSPage from './pages/tailwind-css/index.jsx'
 import ClassComponentPage from './pages/class-component/index.jsx'
+import FunctionalComponentPage from './pages/functional-component/index.jsx'
 
 const router = createBrowserRouter([
   {
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
       {
         path: '/bebas', 
         element: <ClassComponentPage />
+      },
+      {
+        path: '/functional-component', 
+        element: <FunctionalComponentPage />
       }
     ]
   }
