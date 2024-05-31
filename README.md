@@ -61,3 +61,9 @@ Hello, JCWD-2802 Student(s)!
 - How to Install Tailwind CSS?
   
            https://tailwindcss.com/docs/guides/vite
+
+- Network Call 
+
+            1. Install Axios
+
+                    npm i axios
