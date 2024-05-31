@@ -17,7 +17,7 @@ export default function NetworkCallPage(){
     // Step-01 Bikin Function untuk Fetch Data
     const onFetchData = async() => {
        try {
-            const res = await axios.get('https://jsonplaceholder.typicode.com/usersss')
+            const res = await axios.get('http://localhost:5000/users')
             console.log(res)
             // Step-02 Hasil Fetch Data nya disimpan ke useState
             setData(res.data)
@@ -33,16 +33,22 @@ export default function NetworkCallPage(){
         onFetchData()
     }, [])
 
+    // Conditional Rendering, Ketika Datanya Masih Kosong
+    if(data.length === 0) return <div>Loading...</div>
+
     return(
         <>
-            {
-        console.log('RENDER')}
             {/* Step-04 Map Data yang disimpan di useState untuk Menampilkan di Halaman Website */}
             {
                 data.map((item, index) => {
                     return(
                         <div>
+                            <div>
                             {item.username}
+                            </div>
+                            <div>
+                            {item.email}
+                            </div>
                         </div>
                     )
                 })

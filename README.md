@@ -67,3 +67,29 @@ Hello, JCWD-2802 Student(s)!
             1. Install Axios
 
                     npm i axios
+
+- Using Fake API JSON-SERVER
+
+            1. Install JSON-SERVER
+
+                    npm i -g json-server
+
+            2. Create "db.json" file
+
+            3. Running JSON-SERVER
+
+                    json-server --watch db.json --port 5000
+
+- Other Dependencies
+
+            1. React Icons
+
+                    npm i react-icons
+
+            2. DaisyUI
+
+                    https://daisyui.com/docs/install/ 
+
+            3. Toastify
+
+                    npm install --save react-toastify
