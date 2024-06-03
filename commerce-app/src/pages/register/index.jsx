@@ -1,15 +1,18 @@
-import { useRef } from "react"
+import { useRef, useState } from "react"
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 
 export default function RegisterPage(){
+    const [disabledButton, setDisabledButton] = useState(false)
+
     const inputUsername = useRef('')
     const inputEmail = useRef('')
     const inputPassword = useRef('')
 
     const onRegister = async() => {
         try {
+            setDisabledButton(true)
             // Untuk Menghindari Auto Refresh Halaman Ketika Form di Submit
             event.preventDefault()
 
@@ -19,13 +22,20 @@ export default function RegisterPage(){
             const password = inputPassword.current.value
 
             // Berikutnya, Kita Kirim Data diatas ke API JSON-Server
-            await axios.post('http://localhost:5000/usersss', {
+            await axios.post('http://localhost:5000/users', {
                 username, email, password
             })
 
             toast.success('Register Success!')
+
+            // Untuk Mengkosongkan Kolom Input
+            inputUsername.current.value = ''
+            inputEmail.current.value = ''
+            inputPassword.current.value = ''
         } catch (error) {
             toast.error('Something Went Wrong!')
+        } finally{
+            setDisabledButton(false)
         }
     }
 
@@ -56,8 +66,13 @@ export default function RegisterPage(){
                             </div>
                             <input ref={inputPassword} type="text" placeholder="Type here" className="input input-bordered w-full" />
                         </label>   
-                        <button type="submit" className='btn bg-red-500 text-white w-full mt-5'>
-                            Register    
+                        <button disabled={disabledButton} type="submit" className='btn bg-red-500 text-white w-full mt-5'>
+                            {
+                                disabledButton === true?
+                                    'Loading...'
+                                :
+                                    'Register'
+                            }
                         </button> 
                     </form>
                 </div>
