@@ -23,6 +23,8 @@ export default function RegisterPage(){
             const email = inputEmail.current.value
             const password = inputPassword.current.value
 
+            if(!email.includes('@')) throw {message: 'Email Not Valid!'}
+
             const res = await axios.get(`http://localhost:5000/users?email=${email}`)
             
             if(res.data.length > 0) throw {message: 'Email Already Registered!'}
