@@ -5,6 +5,7 @@ import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 import { IoLocationOutline } from "react-icons/io5";
 import { BsBoxSeam } from "react-icons/bs";
 import { AiOutlineUser } from "react-icons/ai";
+import { Outlet } from 'react-router-dom';
 
 function App() {
   return (
@@ -80,6 +81,7 @@ function App() {
           </div>
         </nav>
       </section>
+      <Outlet />
     </>
   )
 }
