@@ -1,9 +1,9 @@
 import { useRef, useState } from "react"
 import axios from 'axios';
-import { ToastContainer, toast } from 'react-toastify';
-import "react-toastify/dist/ReactToastify.css";
+import { toast } from 'react-toastify';
 
 export default function RegisterPage(){
+    // Step-01 Buat useState untuk Disabled Button
     const [disabledButton, setDisabledButton] = useState(false)
 
     const inputUsername = useRef('')
@@ -12,7 +12,9 @@ export default function RegisterPage(){
 
     const onRegister = async() => {
         try {
+            // Step-03 useState Disabled Button diubah Menjadi true Sebelum Axios
             setDisabledButton(true)
+
             // Untuk Menghindari Auto Refresh Halaman Ketika Form di Submit
             event.preventDefault()
 
@@ -35,13 +37,13 @@ export default function RegisterPage(){
         } catch (error) {
             toast.error('Something Went Wrong!')
         } finally{
+            // Step-04 useState Disabled Button diubah Menjadi False Lagi
             setDisabledButton(false)
         }
     }
 
     return(
         <>
-            <ToastContainer />
             <section className='flex justify-center py-10 border'>
                 <div className="w-[50%]">
                     <h1 className='text-3xl font-bold'>
@@ -66,6 +68,7 @@ export default function RegisterPage(){
                             </div>
                             <input ref={inputPassword} type="text" placeholder="Type here" className="input input-bordered w-full" />
                         </label>   
+                        {/* Step-02 useState Disabled Button dipasang dengan Atribut "disabled" */}
                         <button disabled={disabledButton} type="submit" className='btn bg-red-500 text-white w-full mt-5'>
                             {
                                 disabledButton === true?

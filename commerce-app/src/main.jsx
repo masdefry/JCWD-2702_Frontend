@@ -4,6 +4,7 @@ import App from './App.jsx'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import RegisterPage from './pages/register/index';
+import LoginPage from './pages/login/index.jsx';
 
 const routing = createBrowserRouter(
   [
@@ -13,6 +14,10 @@ const routing = createBrowserRouter(
         {
           path: '/register', 
           element: <RegisterPage />
+        }, 
+        {
+          path: '/login', 
+          element: <LoginPage />
         }
       ]
     }
