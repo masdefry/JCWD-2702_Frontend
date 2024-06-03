@@ -14,6 +14,7 @@ export default function LoginPage(){
             const password = inputPassword.current.value 
 
             const res = await axios.get(`http://localhost:5000/users?email=${email}`)
+
             if(res.data.length === 0) throw {message: 'Email Doesnt Match!'}
 
             if(res.data[0].password !== password) throw {message: 'Password Doesnt Match!'}

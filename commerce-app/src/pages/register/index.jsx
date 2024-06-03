@@ -23,6 +23,10 @@ export default function RegisterPage(){
             const email = inputEmail.current.value
             const password = inputPassword.current.value
 
+            const res = await axios.get(`http://localhost:5000/users?email=${email}`)
+            
+            if(res.data.length > 0) throw {message: 'Email Already Registered!'}
+
             // Berikutnya, Kita Kirim Data diatas ke API JSON-Server
             await axios.post('http://localhost:5000/users', {
                 username, email, password
@@ -35,7 +39,7 @@ export default function RegisterPage(){
             inputEmail.current.value = ''
             inputPassword.current.value = ''
         } catch (error) {
-            toast.error('Something Went Wrong!')
+            toast.error(error.message)
         } finally{
             // Step-04 useState Disabled Button diubah Menjadi False Lagi
             setDisabledButton(false)
