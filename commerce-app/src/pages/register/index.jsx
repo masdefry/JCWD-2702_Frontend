@@ -19,13 +19,13 @@ export default function RegisterPage(){
             const password = inputPassword.current.value
 
             // Berikutnya, Kita Kirim Data diatas ke API JSON-Server
-            await axios.post('http://localhost:5000/users', {
+            await axios.post('http://localhost:5000/usersss', {
                 username, email, password
             })
 
             toast.success('Register Success!')
         } catch (error) {
-            console.log(error)
+            toast.error('Something Went Wrong!')
         }
     }
 
