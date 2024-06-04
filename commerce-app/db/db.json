@@ -30,7 +30,7 @@
   "products": [
     {
       "id": "91bc", 
-      "name": "Bata Comfit", 
+      "name": "SENDAL WANITA BATA COMFIT", 
       "price": 179900, 
       "sizes": [
         {
@@ -49,6 +49,122 @@
       ], 
       "description": "Lorem", 
       "category": "Sandal"
+    },
+    {
+      "id": "a71c", 
+      "name": "SENDAL SLIDES PRIA DURACEL", 
+      "price": 249900, 
+      "sizes": [
+        {
+          "size": 40, 
+          "stocks": 10
+        },
+        {
+          "size": 41, 
+          "stocks": 20
+        },
+        {
+          "size": 42, 
+          "stocks": 5
+        },
+        {
+          "size": 43, 
+          "stocks": 15
+        },
+        {
+          "size": 44, 
+          "stocks": 3
+        },
+        {
+          "sizes": 45, 
+          "stocks": 20
+        }
+      ], 
+      "imageUrl": [
+        "https://www.bata.com/dw/image/v2/BCLG_PRD/on/demandware.static/-/Sites-bata-id-master-catalog/default/dwb0e7f2f9/images/large/8734237_1.jpg?sw=1634",
+        "https://www.bata.com/dw/image/v2/BCLG_PRD/on/demandware.static/-/Sites-bata-id-master-catalog/default/dw70efbfa4/images/large/8734237_2.jpg?sw=1634",
+        "https://www.bata.com/dw/image/v2/BCLG_PRD/on/demandware.static/-/Sites-bata-id-master-catalog/default/dwe8659cfb/images/large/8734237_3.jpg?sw=1634"
+      ], 
+      "description": "Lorem", 
+      "category": "Sandal"
+    },
+    {
+      "id": "11uy", 
+      "name": "SANDAL SLIDE WANITA PIA", 
+      "price": 99900, 
+      "sizes": [
+        {
+          "size": 36, 
+          "stocks": 10
+        },
+        {
+          "size": 38,
+          "stocks": 20
+        },
+        {
+          "size": 40, 
+          "stocks": 5
+        }
+      ], 
+      "imageUrl": [
+        "https://www.bata.com/dw/image/v2/BCLG_PRD/on/demandware.static/-/Sites-bata-id-master-catalog/default/dwa57929fc/images/large/5729243_1.jpg?sw=1634",
+        "https://www.bata.com/dw/image/v2/BCLG_PRD/on/demandware.static/-/Sites-bata-id-master-catalog/default/dw45842fa1/images/large/5729243_3.jpg?sw=1634",
+        "https://www.bata.com/dw/image/v2/BCLG_PRD/on/demandware.static/-/Sites-bata-id-master-catalog/default/dw1ed5c8c0/images/large/5729243_4.jpg?sw=1634"
+      ], 
+      "description": "Lorem", 
+      "category": "Sandal"
+    },
+    {
+      "id": "90qp", 
+      "name": "LADIES HEELS GELSEY", 
+      "price": 349900, 
+      "sizes": [
+        {
+          "size": 36, 
+          "stocks": 10
+        },
+        {
+          "size": 37,
+          "stocks": 20
+        },
+        {
+          "size": 38, 
+          "stocks": 5
+        }
+      ], 
+      "imageUrl": [
+        "https://www.bata.com/dw/image/v2/BCLG_PRD/on/demandware.static/-/Sites-bata-id-master-catalog/default/dw8a5a6d8b/images/large/6516870_1.jpg?sw=1634",
+        "https://www.bata.com/dw/image/v2/BCLG_PRD/on/demandware.static/-/Sites-bata-id-master-catalog/default/dwb63ed5e8/images/large/6516870_2.jpg?sw=1634",
+        "https://www.bata.com/dw/image/v2/BCLG_PRD/on/demandware.static/-/Sites-bata-id-master-catalog/default/dw6262db21/images/large/6516870_4.jpg?sw=1634"
+      ], 
+      "description": "Lorem", 
+      "category": "Sepatu"
+    },
+    {
+      "id": "1j9l", 
+      "name": "MEN SNEAKERS MAIRO", 
+      "price": 499000, 
+      "sizes": [
+        {
+          "size": 40, 
+          "stocks": 10
+        },
+        {
+          "size": 42,
+          "stocks": 20
+        },
+        {
+          "size": 44, 
+          "stocks": 5
+        }
+      ], 
+      "imageUrl": [
+        "https://www.bata.com/dw/image/v2/BCLG_PRD/on/demandware.static/-/Sites-bata-id-master-catalog/default/dw1ad4ba73/images/large/8812180_1.jpg?sw=1634",
+        "https://www.bata.com/dw/image/v2/BCLG_PRD/on/demandware.static/-/Sites-bata-id-master-catalog/default/dw3a7a9648/images/large/8812180_2.jpg?sw=1634",
+        "https://www.bata.com/dw/image/v2/BCLG_PRD/on/demandware.static/-/Sites-bata-id-master-catalog/default/dw7b6359d5/images/large/8812180_3.jpg?sw=1634"
+      ], 
+      "description": "Lorem", 
+      "category": "Sepatu"
     }
   ]
 }
