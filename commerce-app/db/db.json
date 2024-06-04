@@ -26,5 +26,29 @@
       "name": "",
       "address": ""
     }
+  ], 
+  "products": [
+    {
+      "id": "91bc", 
+      "name": "Bata Comfit", 
+      "price": 179900, 
+      "sizes": [
+        {
+          "size": 35, 
+          "stocks": 50
+        },
+        {
+          "size": 36, 
+          "stocks": 25
+        }
+      ], 
+      "imageUrl": [
+        "https://www.bata.com/dw/image/v2/BCLG_PRD/on/demandware.static/-/Sites-bata-id-master-catalog/default/dw8ae383de/images/large/5716013_1.jpg?sw=1634",
+        "https://www.bata.com/dw/image/v2/BCLG_PRD/on/demandware.static/-/Sites-bata-id-master-catalog/default/dwf248a10a/images/large/5716013_2.jpg?sw=1634",
+        "https://www.bata.com/dw/image/v2/BCLG_PRD/on/demandware.static/-/Sites-bata-id-master-catalog/default/dwdd87ab12/images/large/5716013_3.jpg?sw=1634"
+      ], 
+      "description": "Lorem", 
+      "category": "Sandal"
+    }
   ]
 }

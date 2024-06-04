@@ -5,6 +5,7 @@ import { ToastContainer } from 'react-toastify';
 import RegisterPage from './pages/register';
 import LoginPage from './pages/login';
 import CRUDPage from './pages/crud';
+import HomePage from './pages/home';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <ToastContainer />
       <Navbar />
       <Routes>
+        <Route path='/' element={<HomePage />} />
         <Route path='/register' element={<RegisterPage />} />
         <Route path='/login' element={<LoginPage />} />
         <Route path='/crud' element={<CRUDPage />} />
