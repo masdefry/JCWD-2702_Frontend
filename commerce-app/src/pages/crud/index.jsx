@@ -1,7 +1,9 @@
-import { useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 export default function CRUDPage(){
+    const [data, setData] = useState([])
     const inputName = useRef()
     const inputAddress = useRef()
 
@@ -13,16 +15,34 @@ export default function CRUDPage(){
             const name = inputName.current.value
             const address = inputAddress.current.value
 
-            // Step-02 Valuenya dikirim ke API untuk Disimpan ke DB
+            // Step-02 Validasi 
+            if(!name) throw {message: 'Name must be filled!'}
+            if(!address) throw {message: 'Address must be filled!'}
+
+            // Step-03 Valuenya dikirim ke API untuk Disimpan ke DB
             // axios.post('url', {data yang mau disimpan})
             console.log('Hello')
-            await axios.post('http://localhost:5000/studentssss', {name, address})
-            alert('SUCCESS')
+            await axios.post('http://localhost:5000/students', {name, address})
+            toast.success('Register Success!')
         } catch (error) {
             console.log('CATCH')
+            toast.error(error.message)
+        }
+    }
+
+    async function onFetch(){
+        try {
+            const response = await axios.get('http://localhost:5000/students')  
+            setData(response.data) // {config, statusText, data, ...}
+
+        } catch (error) {
             console.log(error)
         }
     }
+
+    useEffect(() => {
+        onFetch()
+    }, [])
 
     return(
         <>
@@ -33,6 +53,22 @@ export default function CRUDPage(){
                     Submit
                 </button>
             </form>
+
+            <h1>
+                Data Student(s)
+            </h1>
+            {
+                data.map((item, index) => {
+                    return (
+                        <div key={index}>
+                            {JSON.stringify(item)}
+                            <div>
+                                {item.name}
+                            </div>
+                        </div>
+                    )
+                })
+            }
         </>
     )
 }
