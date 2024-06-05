@@ -1,10 +1,16 @@
-import { useRef } from "react"
+import { useContext, useRef } from "react"
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import { useNavigate } from "react-router-dom";
+
+import { userContext } from "../../context/userContext";
 
 export default function LoginPage(){
+    const navigate = useNavigate()
     const inputEmail = useRef()
     const inputPassword = useRef()
+
+    const {setUserData} = useContext(userContext)
 
     const onLogin = async() => {
         try {
@@ -19,7 +25,9 @@ export default function LoginPage(){
 
             if(res.data[0].password !== password) throw {message: 'Password Doesnt Match!'}
 
+            setUserData(res.data[0].username)
             toast.success('Login Success!')
+            navigate('/')
         } catch (error) { // error: {message: '...'}
             toast.error(error.message)
         }

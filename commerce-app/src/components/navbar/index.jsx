@@ -2,8 +2,14 @@ import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 import { IoLocationOutline } from "react-icons/io5";
 import { BsBoxSeam } from "react-icons/bs";
 import { AiOutlineUser } from "react-icons/ai";
+import { userContext } from "../../context/userContext";
+import { useContext } from "react";
 
 export default function Navbar(){
+
+  const {userData} = useContext(userContext)
+  console.log('NAVBAR')
+  console.log(userData)
     return(
         <section name='navbar'>
         <nav name='top' className='flex justify-between py-5 px-10'>
@@ -57,6 +63,9 @@ export default function Navbar(){
               <div className='flex flex-col items-center'>
                 <AiOutlineUser className='text-xl' />
                 Masuk
+              </div>
+              <div>
+                {userData}
               </div>
             </div>
           </div>
