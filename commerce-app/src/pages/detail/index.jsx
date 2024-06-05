@@ -6,6 +6,7 @@ export default function DetailPage(){
     const params = useParams()
     const [product, setProduct] = useState(null)
     const [imageToShow, setImageToShow] = useState('')
+    const [stockSizeSelected, setStockSizeSelected] = useState(0)
 
     const onFetchProductDetail = async() => {
         try {
@@ -70,6 +71,11 @@ export default function DetailPage(){
                     <p>
                         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio provident necessitatibus assumenda rem expedita laboriosam, placeat laborum et reiciendis eius quas. Minus soluta voluptate nihil, ut similique enim. Quaerat, praesentium.
                     </p>
+
+                    <p className='pt-5 font-bold text-green-600'>
+                        Stock: {product.sizes[stockSizeSelected].stocks}
+                    </p>
+
                     <h1 className='text-xl font-bold mt-10'>
                         Pilih Ukuran 
                     </h1>
@@ -77,7 +83,7 @@ export default function DetailPage(){
                         {
                             product?.sizes?.map((item, index) => {
                                 return(
-                                    <h6 className='border text-xl px-3 py-1'>
+                                    <h6 onClick={() => setStockSizeSelected(index)} className={index == stockSizeSelected? 'border border-red-500 text-xl px-3 py-1' : 'border text-xl px-3 py-1'}>
                                         {item.size}
                                     </h6>
                                 )
