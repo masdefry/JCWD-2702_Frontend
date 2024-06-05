@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import axios from 'axios';
+import './style.css'
 
 // Step:
 // 01. Render Component Return
@@ -34,7 +35,7 @@ export default function HomePage(){
                 <h1 className='text-5xl font-bold'>
                     Koleksi Terbaru 
                 </h1>
-                <div className='py-10 grid grid-cols-3 gap-10'>
+                <div className='py-10 grid grid-cols-6 gap-10'>
                     {
                         products.map((item, index) => {
                             return(
@@ -42,7 +43,7 @@ export default function HomePage(){
                                     <div>
                                         <img src={item.imageUrl[0]} />
                                     </div>
-                                    <h1 className='text-xl font-bold'>
+                                    <h1 className='text-xl font-bold product-title'>
                                         {item.name}
                                     </h1>
                                     <h1 className='text-xl'>

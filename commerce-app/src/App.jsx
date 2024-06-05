@@ -6,6 +6,7 @@ import RegisterPage from './pages/register';
 import LoginPage from './pages/login';
 import CRUDPage from './pages/crud';
 import HomePage from './pages/home';
+import DetailPage from './pages/detail';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path='/register' element={<RegisterPage />} />
         <Route path='/login' element={<LoginPage />} />
         <Route path='/crud' element={<CRUDPage />} />
+        <Route path='/detail-product' element={<DetailPage />} />
       </Routes>
       <section>
         Footer
