@@ -4,12 +4,16 @@ import axios from 'axios';
 
 export default function DetailPage(){
     const params = useParams()
-    const [product, setProduct] = useState({})
+    const [product, setProduct] = useState(null)
+    const [imageToShow, setImageToShow] = useState('')
 
     const onFetchProductDetail = async() => {
         try {
             const response = await axios.get(`http://localhost:5000/products/${params.productId}`)
             setProduct(response.data)
+
+            // Step-01 Image Utama disimpan ke useState "imageToShow"
+            setImageToShow(response.data.imageUrl[0])
         } catch (error) {   
             console.log(error)
         }
@@ -19,43 +23,39 @@ export default function DetailPage(){
         onFetchProductDetail()
     }, [])
 
+    if(product === null) return <div>Loading...</div>
+
     return(
         <>
-            {JSON.stringify(product)}
             <div className='flex gap-10 py-10 px-10'>
                 <div className=' flex gap-10'>
                     <div className='flex flex-col gap-5'>
-                        <div className='w-[100px] h-[100px] overflow-hidden'>
-                            <img
-                                src='https://radarpekalongan.disway.id/upload/ebf2156fc3daa44c34a47c139336c7c2.JPG'
-                                className='object-cover min-w-full min-h-full'
-                            />
-                        </div>
-                        <div className='w-[100px] h-[100px] overflow-hidden'>
-                            <img
-                                src='https://radarpekalongan.disway.id/upload/ebf2156fc3daa44c34a47c139336c7c2.JPG'
-                                className='object-cover min-w-full min-h-full'
-                            />
-                        </div>
-                        <div className='w-[100px] h-[100px] overflow-hidden'>
-                            <img
-                                src='https://radarpekalongan.disway.id/upload/ebf2156fc3daa44c34a47c139336c7c2.JPG'
-                                className='object-cover min-w-full min-h-full'
-                            />
-                        </div>
-                        <div className='w-[100px] h-[100px] overflow-hidden'>
-                            <img
-                                src='https://radarpekalongan.disway.id/upload/ebf2156fc3daa44c34a47c139336c7c2.JPG'
-                                className='object-cover min-w-full min-h-full'
-                            />
-                        </div>
-                        
+                        {
+                            product?.imageUrl?.map((item, index) => {
+                                return(
+                                    // Step-02 Setiap Kali onClick Akan Mengubah URL Main Image yang Ada di useState "imageToShow"
+                                    <div onClick={() => setImageToShow(item)} className='w-[100px] h-[100px] overflow-hidden'>
+                                        <img
+                                            src={item}
+                                            className='object-cover min-w-full min-h-full'
+                                        />
+                                    </div>
+                                )
+                            })
+                        }
                     </div>
                     <div
                         className='w-[700px] h-[700px] overflow-hidden'
                     >
+                        {/* SRC From useState product */}
+                        {/* <img 
+                            src={product.imageUrl[0]}
+                            className='object-cover min-w-full min-h-full'
+                        /> */}
+
+                        {/* SRC From useState imageToShow */}
                         <img 
-                            src='https://radarpekalongan.disway.id/upload/ebf2156fc3daa44c34a47c139336c7c2.JPG'
+                            src={imageToShow}
                             className='object-cover min-w-full min-h-full'
                         />
                     </div>

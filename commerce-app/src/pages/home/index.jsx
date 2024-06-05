@@ -40,7 +40,7 @@ export default function HomePage(){
                     {
                         products.map((item, index) => {
                             return(
-                                <Link to={`/detail-product/${item.id}`}>
+                                <Link key={index} to={`/detail-product/${item.id}`}>
                                     <div>
                                         <div>
                                             <img src={item.imageUrl[0]} />
