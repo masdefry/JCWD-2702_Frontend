@@ -6,7 +6,7 @@ export default function DetailPage(){
     const params = useParams()
     const [product, setProduct] = useState(null)
     const [imageToShow, setImageToShow] = useState('')
-    const [stockSizeSelected, setStockSizeSelected] = useState(0)
+    const [indexSizeSelected, setIndexSizeSelected] = useState(0)
 
     const onFetchProductDetail = async() => {
         try {
@@ -73,7 +73,7 @@ export default function DetailPage(){
                     </p>
 
                     <p className='pt-5 font-bold text-green-600'>
-                        Stock: {product.sizes[stockSizeSelected].stocks}
+                        Stock: {product.sizes[indexSizeSelected].stocks}
                     </p>
 
                     <h1 className='text-xl font-bold mt-10'>
@@ -83,7 +83,7 @@ export default function DetailPage(){
                         {
                             product?.sizes?.map((item, index) => {
                                 return(
-                                    <h6 onClick={() => setStockSizeSelected(index)} className={index == stockSizeSelected? 'border border-red-500 text-xl px-3 py-1' : 'border text-xl px-3 py-1'}>
+                                    <h6 key={index} onClick={() => setIndexSizeSelected(index)} className={index == indexSizeSelected? 'border border-red-500 text-xl px-3 py-1' : 'border text-xl px-3 py-1'}>
                                         {item.size}
                                     </h6>
                                 )
@@ -91,7 +91,7 @@ export default function DetailPage(){
                         }
                     </div>
 
-                    <button className='btn bg-red-500 text-white w-full mt-5 rounded-none'>
+                    <button disabled={product?.sizes[indexSizeSelected]?.stocks === 0? true : false} className='btn bg-red-500 text-white w-full mt-5 rounded-none'>
                         Add to Cart 
                     </button>
                 </div>
