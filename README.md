@@ -93,3 +93,73 @@ Hello, JCWD-2802 Student(s)!
             3. Toastify
 
                     npm install --save react-toastify
+
+- How to Setup Context?
+
+                1. Create New Directory with Name "context"
+
+                2. Inside Directory "context", Create New File with Name "userContext.js"
+
+                3. "userContext.js" Contains:
+
+                                import {createContext} from 'react';
+
+                                export const userContext = createContext(null)
+
+                4. At "App.jsx" Files, Import "userContext" and Create New useState:
+
+                                <!-- Do This -->
+                                import { userContext } from './context/userContext';
+
+                                function App() {
+                                        <!-- Do This -->
+                                        const [userData, setUserData] = useState(null)
+
+                                        return (
+                                                <>
+                                                        <!-- Do This -->
+                                                        <userContext.Provider value={{userData, setUserData}}>
+                                                                <ToastContainer />
+                                                                <Navbar />
+                                                                <Routes>
+                                                                        <Route path='/' element={<HomePage />} />
+                                                                        <Route path='/register' element={<RegisterPage />} />
+                                                                        <Route path='/login' element={<LoginPage />} />
+                                                                        <Route path='/crud' element={<CRUDPage />} />
+                                                                        <Route path='/detail-product/:productId' element={<DetailPage />} />
+                                                                </Routes>
+                                                                <section>
+                                                                Footer
+                                                                </section>
+                                                        </userContext.Provider>
+                                                </>
+                                        )
+                                }
+
+                                export default App
+
+                5. At "index.jsx" on Login Page:
+
+                                1. Import "userContext" and "useContext"
+                                import { userContext } from "../../context/userContext";
+                                import { useContext } from "react";
+
+                                2. Define useContext with Contains userContext
+                                const {setUserData} = useContext(userContext)
+
+                                3. Set Data Into userContext
+                                setUserData(res.data[0].username)
+
+                6. At "index.jsx" on Navbar Component:
+
+                                1. Import "userContext" and "useContext"
+                                import { userContext } from "../../context/userContext";
+                                import { useContext } from "react";
+
+                                2. Define useContext with Contains userContext
+                                const {userData} = useContext(userContext)
+
+                                3. Get Data from userContext
+                                <div>
+                                        {userData}
+                                </div>
