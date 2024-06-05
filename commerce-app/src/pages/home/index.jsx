@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import axios from 'axios';
 import './style.css'
+import { Link } from "react-router-dom";
 
 // Step:
 // 01. Render Component Return
@@ -39,18 +40,19 @@ export default function HomePage(){
                     {
                         products.map((item, index) => {
                             return(
-                                <div>
+                                <Link to={`/detail-product/${item.id}`}>
                                     <div>
-                                        <img src={item.imageUrl[0]} />
+                                        <div>
+                                            <img src={item.imageUrl[0]} />
+                                        </div>
+                                        <h1 className='text-xl font-bold product-title'>
+                                            {item.name}
+                                        </h1>
+                                        <h1 className='text-xl'>
+                                            Rp. {item.price.toLocaleString('id-ID')}
+                                        </h1>
                                     </div>
-                                    <h1 className='text-xl font-bold product-title'>
-                                        {item.name}
-                                    </h1>
-                                    <h1 className='text-xl'>
-                                        Rp. {item.price.toLocaleString('id-ID')}
-                                    </h1>
-                                </div>
-                                
+                                </Link>
                             )
                         })
                     }

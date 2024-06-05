@@ -1,6 +1,27 @@
+import { useEffect, useState } from "react"
+import { useParams } from "react-router-dom"
+import axios from 'axios';
+
 export default function DetailPage(){
+    const params = useParams()
+    const [product, setProduct] = useState({})
+
+    const onFetchProductDetail = async() => {
+        try {
+            const response = await axios.get(`http://localhost:5000/products/${params.productId}`)
+            setProduct(response.data)
+        } catch (error) {   
+            console.log(error)
+        }
+    }
+
+    useEffect(() => {
+        onFetchProductDetail()
+    }, [])
+
     return(
         <>
+            {JSON.stringify(product)}
             <div className='flex gap-10 py-10 px-10'>
                 <div className=' flex gap-10'>
                     <div className='flex flex-col gap-5'>
@@ -41,10 +62,10 @@ export default function DetailPage(){
                 </div>
                 <div className=''>
                     <h1 className='text-3xl font-bold'>
-                        Title 
+                        {product.name}
                     </h1>
                     <h1 className='text-3xl font-bold'>
-                         Rp. xxx
+                         Rp. {product?.price?.toLocaleString('id-ID')}
                     </h1>
                     <p>
                         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio provident necessitatibus assumenda rem expedita laboriosam, placeat laborum et reiciendis eius quas. Minus soluta voluptate nihil, ut similique enim. Quaerat, praesentium.
@@ -53,15 +74,15 @@ export default function DetailPage(){
                         Pilih Ukuran 
                     </h1>
                     <div className='flex gap-3'>
-                        <h6 className='border text-xl px-3 py-1'>
-                            36
-                        </h6>
-                        <h6 className='border text-xl px-3 py-1'>
-                            37
-                        </h6>
-                        <h6 className='border text-xl px-3 py-1'>
-                            38
-                        </h6>
+                        {
+                            product?.sizes?.map((item, index) => {
+                                return(
+                                    <h6 className='border text-xl px-3 py-1'>
+                                        {item.size}
+                                    </h6>
+                                )
+                            })
+                        }
                     </div>
 
                     <button className='btn bg-red-500 text-white w-full mt-5 rounded-none'>

@@ -18,7 +18,7 @@ function App() {
         <Route path='/register' element={<RegisterPage />} />
         <Route path='/login' element={<LoginPage />} />
         <Route path='/crud' element={<CRUDPage />} />
-        <Route path='/detail-product' element={<DetailPage />} />
+        <Route path='/detail-product/:productId' element={<DetailPage />} />
       </Routes>
       <section>
         Footer
