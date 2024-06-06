@@ -1,8 +1,0 @@
-.product-title {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-height: 50px; /* Adjust this based on your line height */
-}

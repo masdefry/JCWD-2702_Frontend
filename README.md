@@ -1,165 +1,20 @@
 Hello, JCWD-2802 Student(s)!
 
- - How to Setup React JS with Vite?
+- How to Setup Next JS?
 
-            1. Create Project
+        npx create-next-app@latest project-name
 
-                    npm create vite@latest
-            
-            2. Inside Your New Vite Project
+- Server Component
 
-                    npm i 
-            
-            3. Execute Vite Project
+        1. Tidak Boleh Ada Fitur React Hooks (Ex. useEffect, useRef, useState, dll)
 
-                    npm run dev
+        2. Tidak Boleh Ada Interaksi dengan User (Ex. Input, onClick Event)
 
-- How to Setup React Router DOM (Version 6xx)?
+- Fetching on Server Component
 
-            1. Install 
-
-                    npm i react-router-dom@6
-
-            2. Setup Router at "main.jsx"
-
-                    const router = createBrowserRouter([
-                        {
-                            element: <App />,
-                            children: [
-                            {
-                                path: '/', 
-                                element: <HomePage />
-                            },
-                            {
-                                path: '/profile', 
-                                element: <ProfilePage />
-                            }, 
-                            {
-                                path: '/admin', 
-                                element: <AdminPage />
-                            }
-                            ]
-                        }
-                    ])
-
-                    ReactDOM.createRoot(document.getElementById('root')).render(
-                    <RouterProvider router={router}>
-                        <App />
-                    </RouterProvider>,
-                    )
-
-            3. Place "<Outlet />" Component at "App.jsx"
-
-                    function App(){
-                        return(
-                            <Outlet />
-                        )
-                    }
-
-            4. Create Page(s) and Register to "main.jsx" Routers
-
-- How to Install Tailwind CSS?
-  
-           https://tailwindcss.com/docs/guides/vite
-
-- Network Call 
-
-            1. Install Axios
-
-                    npm i axios
-
-- Using Fake API JSON-SERVER
-
-            1. Install JSON-SERVER
-
-                    npm i -g json-server
-
-            2. Create "db.json" file
-
-            3. Running JSON-SERVER
-
-                    json-server --watch db.json --port 5000
-
-- Other Dependencies
-
-            1. React Icons
-
-                    npm i react-icons
-
-            2. DaisyUI
-
-                    https://daisyui.com/docs/install/ 
-
-            3. Toastify
-
-                    npm install --save react-toastify
-
-- How to Setup Context?
-
-                1. Create New Directory with Name "context"
-
-                2. Inside Directory "context", Create New File with Name "userContext.js"
-
-                3. "userContext.js" Contains:
-
-                                import {createContext} from 'react';
-
-                                export const userContext = createContext(null)
-
-                4. At "App.jsx" Files, Import "userContext" and Create New useState:
-
-                                <!-- Do This -->
-                                import { userContext } from './context/userContext';
-
-                                function App() {
-                                        <!-- Do This -->
-                                        const [userData, setUserData] = useState(null)
-
-                                        return (
-                                                <>
-                                                        <!-- Do This -->
-                                                        <userContext.Provider value={{userData, setUserData}}>
-                                                                <ToastContainer />
-                                                                <Navbar />
-                                                                <Routes>
-                                                                        <Route path='/' element={<HomePage />} />
-                                                                        <Route path='/register' element={<RegisterPage />} />
-                                                                        <Route path='/login' element={<LoginPage />} />
-                                                                        <Route path='/crud' element={<CRUDPage />} />
-                                                                        <Route path='/detail-product/:productId' element={<DetailPage />} />
-                                                                </Routes>
-                                                                <section>
-                                                                Footer
-                                                                </section>
-                                                        </userContext.Provider>
-                                                </>
-                                        )
-                                }
-
-                                export default App
-
-                5. At "index.jsx" on Login Page:
-
-                                1. Import "userContext" and "useContext"
-                                import { userContext } from "../../context/userContext";
-                                import { useContext } from "react";
-
-                                2. Define useContext with Contains userContext
-                                const {setUserData} = useContext(userContext)
-
-                                3. Set Data Into userContext
-                                setUserData(res.data[0].username)
-
-                6. At "index.jsx" on Navbar Component:
-
-                                1. Import "userContext" and "useContext"
-                                import { userContext } from "../../context/userContext";
-                                import { useContext } from "react";
-
-                                2. Define useContext with Contains userContext
-                                const {userData} = useContext(userContext)
-
-                                3. Get Data from userContext
-                                <div>
-                                        {userData}
-                                </div>
+        1. SSR (Server Side Rendering) ---> Gunakan Value 'no-store' di Props 'cache'
+        2. SSG (Static Site Generator) ---> Gunakan Value 'force-cache' di Props 'cache'
+                - Sekali di NPM Run Dev, Halaman Akan dikonveri Menjadi HTML File
+                - Fetching Datanya Hanya 1x, ketika NPM Run Dev di Execute
+                - Ketika Ada Pembaharuan Data di Database, Halaman Tidak Akan Mendapatkan Data Terbarunya 
+        3. ISR (Incremental Static Regeneration)
