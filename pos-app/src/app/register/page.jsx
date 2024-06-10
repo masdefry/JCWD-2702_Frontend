@@ -1,8 +1,21 @@
 'use client';
 import { Formik, Form, Field, ErrorMessage } from "formik"
 import { registerSchema } from "@/features/schemas/registerSchema";
+import axios from 'axios';
+import {toast} from 'react-toastify';
 
 export default function RegisterPage(){
+
+    const onRegisterUser = async(_values) => { // _values = {username, email, password, phoneNumber}
+        try{
+            await axios.post('http://localhost:5000/users', _values)
+
+            toast.success('Register Success!')
+        }catch(error){
+            console.log(error)
+        }
+    }
+
     return(
         <>
             <section className='flex justify-center py-10 border'>
@@ -18,8 +31,8 @@ export default function RegisterPage(){
                             phoneNumber: ''
                         }}
                         validationSchema={registerSchema}
-                        onSubmit={(values) => {
-                            console.log(values)
+                        onSubmit={async(values) => {
+                            onRegisterUser(values) // values = {username, email, password, phoneNumber}
                         }}
                     >
                         {

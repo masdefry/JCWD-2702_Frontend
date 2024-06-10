@@ -1,0 +1,39 @@
+{
+  "users": [
+    {
+      "id": "7e76",
+      "username": "ryan01",
+      "email": "ryan@gmail.com",
+      "password": "abc123",
+      "phoneNumber": "0812821912192"
+    },
+    {
+      "id": "9ad4",
+      "username": "ryan02",
+      "email": "ryan@gmail.com",
+      "password": "abc123",
+      "phoneNumber": "082121219291291"
+    },
+    {
+      "id": "97fc",
+      "username": "ryan02",
+      "email": "ryan@gmail.com",
+      "password": "abc123",
+      "phoneNumber": "082121219291291"
+    },
+    {
+      "id": "5953",
+      "username": "ryan02",
+      "email": "ryan@gmail.com",
+      "password": "abc123",
+      "phoneNumber": "082121219291291"
+    },
+    {
+      "id": "2cc8",
+      "username": "ryan02",
+      "email": "ryan@gmail.com",
+      "password": "abc123",
+      "phoneNumber": "01201201201212"
+    }
+  ]
+}
