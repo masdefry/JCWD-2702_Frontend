@@ -14,10 +14,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
         <body className={inter.className}>
-       <MantineProvider>
-          <Navbar />
-          {children}
-       </MantineProvider>
+          <MantineProvider>
+            <Navbar />
+            {children}
+          </MantineProvider>
         </body>
     </html>
   );
