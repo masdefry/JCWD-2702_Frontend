@@ -18,3 +18,8 @@ Hello, JCWD-2802 Student(s)!
                 - Fetching Datanya Hanya 1x, ketika NPM Run Dev di Execute
                 - Ketika Ada Pembaharuan Data di Database, Halaman Tidak Akan Mendapatkan Data Terbarunya 
         3. ISR (Incremental Static Regeneration)
+
+- Form Validation using Formik & Yup
+
+        npm install formik --save
+        npm install yup
