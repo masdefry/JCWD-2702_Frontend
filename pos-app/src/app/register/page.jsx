@@ -6,11 +6,12 @@ import {toast} from 'react-toastify';
 
 export default function RegisterPage(){
 
-    const onRegisterUser = async(_values) => { // _values = {username, email, password, phoneNumber}
+    const onRegisterUser = async(_values, _resetForm) => { // _values = {username, email, password, phoneNumber}
         try{
             await axios.post('http://localhost:5000/users', _values)
 
             toast.success('Register Success!')
+            _resetForm()
         }catch(error){
             console.log(error)
         }
@@ -31,8 +32,8 @@ export default function RegisterPage(){
                             phoneNumber: ''
                         }}
                         validationSchema={registerSchema}
-                        onSubmit={async(values) => {
-                            onRegisterUser(values) // values = {username, email, password, phoneNumber}
+                        onSubmit={(values, {resetForm}) => {
+                            onRegisterUser(values, resetForm) // values = {username, email, password, phoneNumber}
                         }}
                     >
                         {
