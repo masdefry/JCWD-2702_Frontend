@@ -6,8 +6,12 @@ import {toast} from 'react-toastify';
 // Step-01 to Redirect Page
 import { useRouter } from 'next/navigation'
 import {useState} from 'react';
+import { useDispatch } from 'react-redux';
+import {setUser} from '@/redux/slices/userSlice';
 
 export default function AuthPage(){
+    const dispatch = useDispatch()
+
     const [isLoading, setIsLoading] = useState(false)
 
     // Step-02 to Redirect Page
@@ -20,16 +24,24 @@ export default function AuthPage(){
             if(res.data[0].password !== _values.password) throw {message: 'Account Not Found!'}
 
             toast.success('Login Success!')
+
+            dispatch(setUser(res.data))
+
             // Step-03 to Redirect Page
-            router.push('/register')
+            // router.push('/register')
         }catch(error){
             toast.error(error.message)
+        }finally{
+            setIsLoading(false)
         }
     }
 
     return(
         <section className='flex justify-center py-10 border'>
             <div className='w-[50%]'>
+                <h1 className='text-3xl font-bold'>
+                    Login Account
+                </h1>
                 <Formik
                     validationSchema={loginSchema}
                     initialValues={{

@@ -22,4 +22,11 @@ Hello, JCWD-2802 Student(s)!
 - Form Validation using Formik & Yup
 
         npm install formik --save
+        
         npm install yup
+
+- Global State using Redux & Redux Toolkit
+
+        npm install react-redux
+
+        npm install @reduxjs/toolkit

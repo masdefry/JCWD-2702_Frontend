@@ -7,7 +7,7 @@ Apakah perbedaan dari kedua button di atas?
 a. 'btn1' tidak memiliki akses ke property event saat button di klik
 b. 'btn1' tidak dapat memanggil function onSubmit dengan baik
 c. 'btn2' tidak dapat memanggil function onSubmit dengan baik
-d. Tidak ada perbedaan
+x. Tidak ada perbedaan
 
 
 
@@ -31,7 +31,7 @@ d. Tidak ada perbedaan
     }
 */
 Props apa sajakah yang akan dikirim menuju component ProfileField?
-a. Semua props
+x. Semua props
 b. Semua props yang mengalami perubahan
 c. Semua props yang tidak mengalami perubahan
 d. Semua props dari child
@@ -40,7 +40,7 @@ d. Semua props dari child
 
 3. Bagaimana bisa kita mengganti apa yang ditampilkan oleh sebuah component di ReactJS?
 a. Tidak bisa, karena component di React bersifat statis
-b. Membuat sebuah state yang dapat diubah, kemudian tampilkan state tersebut
+x. Membuat sebuah state yang dapat diubah, kemudian tampilkan state tersebut
    di dalam component React
 c. Membuat sebuah variable yang dapat diubah, kemudian tampilkan variable
    tersebut di dalam component React
@@ -71,7 +71,7 @@ export default function Sidebar(){
 }
 */
 Apakah ada kesalahan dalam pembuatan component sidebar di atas?
-a. Tidak ada
+x. Tidak ada
 b. Ada! Karena function mapCategory berusaha me-render 'category' yang bukan merupakan sebuah state
 c. Ada! Function mapCategory tidak akan menghasilkan apapun, karena tidak ada event listener yang memanggil
    function tersebut
@@ -80,7 +80,7 @@ d. Ada! Karena method .map di dalam function mapCategory tidak menggunakan param
 
 
 6. Mengapa kita membutuhkan redux ketimbang local state di dalam project React?
-a. Untuk me-manage state yang lebih kompleks
+x. Untuk me-manage state yang lebih kompleks
 b. Untuk meningkatkan performa aplikasi ReactJS agar lebih baik
 c. Untuk menyimpan data secara permanen
 d. Untuk menyiapkan sebuah production app
@@ -92,7 +92,7 @@ d. Untuk menyiapkan sebuah production app
 :productId disebut dengan?
 a. Rute param
 b. Route params
-c. Route parameter
+x. Route parameter
 d. Route query
 
 
@@ -100,7 +100,7 @@ d. Route query
 10. Berikut ini manakah library yang harus kita install ketika ingin melakukan http method di dalam 
     project React? 
 a. fetch
-b. axios
+x. axios
 c. redux
 d. zustand
 
@@ -110,14 +110,14 @@ d. zustand
 a. 3000
 b. 3001
 c. 4173
-d. 5173
+x. 5173
 
 
 
 12. Fitur manakah yang dapat menyimpan data secara permanen di sisi client/frontend?
 a. Session storage
-b. Local storage
-c. Cookies
+x. Local storage
+x. Cookies
 d. Local state
 
 
@@ -125,7 +125,7 @@ d. Local state
 13. Berikut ini manakah urutan lifecycle method di dalam component React?
 a. Component Did Mount > Render/Return > Component Did Update > Component Will Unmount
 b. Render/Return > Component Did Update > Component Did Mount > Component Will Unmount
-c. Render/Return > Component Did Mount > Component Did Update > Component Will Unmount
+x. Render/Return > Component Did Mount > Component Did Update > Component Will Unmount
 d. Semua jawaban salah
 
 
@@ -133,14 +133,14 @@ d. Semua jawaban salah
 14. Bagaimana cara passing data antara component parent ke child didalam ReactJS?
 a. Menggunakan sebuah state global yang dapat diakses oleh semua component
 b. Menggunakan local state di dalam sebuah component
-c. Menggunakan sebuah attribute custom yang bernama props
+x. Menggunakan sebuah attribute custom yang bernama props
 d. Menggunakan sebuah object data
 
 
 
 15. Bagaimana cara menulisakan inline-style untuk font-size:12px dan color:red
 a. style={{font-size:12,color:'red'}}  
-b. style={{fontSize:"12px",color:'red'}} 
+x. style={{fontSize:"12px",color:'red'}} 
 c. style={fontSize:"12px",color:'red'} 
 d. style={{font-size:12px,color:'red'}}  
 
@@ -151,12 +151,12 @@ d. style={{font-size:12px,color:'red'}}
 a. flex-wrap = "nowrap"
 b. flexDirection = "column-reverse"
 c. flexDirection = "reverse"
-d. flexDirection = "row-reverse"
+x. flexDirection = "row-reverse"
 
 
 
 17. Berikut ini element HTML manakah yang memiliki default display block?
-a. h5
+x. h5
 b. span
 c. input
 d. button
@@ -166,21 +166,21 @@ d. button
 18. Bagaimanakah cara membuat component baru di ReactJS?
 a. Dengan menambahkan syntax `new Component()` didalam function render
 b. Dengan menambahkan syntax `createComponent()` didalam function render
-c. Dengan membuat Javascript file baru dan menuliskan kode JSX untuk komponen tersebut 
+x. Dengan membuat Javascript file baru dan menuliskan kode JSX untuk komponen tersebut 
 d. Dengan menambahkan HTML element didalam file HTML untuk merepresentasikan sebuah komponen
 
 
 
 19. Apakah tools yang digunakan untuk meng-compile file JSX di React?
 a. React Router DOM 
-b. Babel 
+x. Babel 
 c. Axios 
 d. ReactDOM
 
 
 
 20. Apakah yang dimaksud dengan "pseudo-element" dalam CSS, dan bagaimana cara mereka digunakan?
-a. Pseudo-element adalah elemen yang muncul setelah elemen yang dipilih dalam CSS dan digunakan untuk styling spesifik
+x. Pseudo-element adalah elemen yang muncul setelah elemen yang dipilih dalam CSS dan digunakan untuk styling spesifik
 b. Pseudo-element adalah elemen yang hanya muncul setelah elemen di hover, dan efek aktif pada elemen tersebut
 c. Pseudo-element adalah elemen yang hanya dapat diakses melalui JavaScript
 d. Tidak ada jawaban yang benar
