@@ -42,5 +42,9 @@
       "password": "abc123",
       "phoneNumber": "09212121312312121"
     }
+  ], 
+
+  "products": [
+    
   ]
 }

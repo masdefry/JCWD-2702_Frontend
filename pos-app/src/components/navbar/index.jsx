@@ -1,11 +1,17 @@
 'use client';
 import Link from 'next/link';
+
+// Step-01 Setup Redux to Get Data from Global Store 
 import { useSelector } from 'react-redux';
+import {useDispatch} from 'react-redux';
+import {setUserLogout} from '@/redux/slices/userSlice'
 
 export default function Navbar(){
+    // Step-02 Setup Redux to Get User Slice Data
     const dataUser = useSelector((state) => state.user.user)
-    console.log('NAVBAR')
-    console.log(dataUser)
+
+    const dispatch = useDispatch()
+
     return(
         <>
             <main className='flex justify-between items-center bg-red-500 px-10 py-3 text-white'>
@@ -16,7 +22,7 @@ export default function Navbar(){
                         </h1>
                     </Link>
                 </section>
-                <section className='flex gap-3'>
+                <section className='w-[50%] flex justify-end gap-3'>
                     {
                         dataUser === null?
                         <>
@@ -32,8 +38,11 @@ export default function Navbar(){
                             </Link> 
                         </>
                         :
-                        <div>
-                            {dataUser[0]?.username}
+                        <div className='flex items-center gap-1'>
+                            <p className='font-bold'>hello, </p>{dataUser[0]?.username}.
+                            <button onClick={() => dispatch(setUserLogout())} className='btn bg-white text-black'>
+                                Logout
+                            </button>
                         </div>
                     }
                 </section>

@@ -6,10 +6,14 @@ import {toast} from 'react-toastify';
 // Step-01 to Redirect Page
 import { useRouter } from 'next/navigation'
 import {useState} from 'react';
+
+// Step-01 Setup Redux
+// useDispatch to Send Data into Global Store
 import { useDispatch } from 'react-redux';
 import {setUser} from '@/redux/slices/userSlice';
 
 export default function AuthPage(){
+    // Step-02 Setup Redux
     const dispatch = useDispatch()
 
     const [isLoading, setIsLoading] = useState(false)
@@ -25,6 +29,7 @@ export default function AuthPage(){
 
             toast.success('Login Success!')
 
+            // Step-03 Setup Redux
             dispatch(setUser(res.data))
 
             // Step-03 to Redirect Page
