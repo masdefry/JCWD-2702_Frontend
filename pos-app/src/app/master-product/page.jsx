@@ -19,10 +19,23 @@ export default function MasterProductPage(){
         }
     })
 
-    const {data: dataProducts} = useQuery({
+    const {data: dataProducts, refetch: refetchDataProducts} = useQuery({
         queryFn: async() => {
             const res = await axios.get('http://localhost:5000/products')
             return res.data
+        }
+    })
+
+    const {mutate: mutateDeleteProduct} = useMutation({
+        mutationFn: async(_id) => {
+            return await axios.delete(`http://localhost:5000/products/${_id}`)
+        }, 
+        onSuccess: (res) => {
+            toast.success('Delete Product Success!')
+            refetchDataProducts()
+        },
+        onError: (err) => {
+            console.log(err)
         }
     })
 
@@ -103,12 +116,12 @@ export default function MasterProductPage(){
                             dataProducts.map((item, index) => {
                                 return(
                                     <tr>
-                                        <th>1</th>
-                                        <td>Cy Ganderton</td>
-                                        <td>Quality Control Specialist</td>
-                                        <td>Blue</td>
+                                        <th>{index+1}</th>
+                                        <td>{item.name}</td>
+                                        <td>{item.price}</td>
+                                        <td>{item.imageUrl}</td>
                                         <td>
-                                            <button className='btn bg-red-500 text-white rounded-md'>
+                                            <button onClick={() => mutateDeleteProduct(item.id)} className='btn bg-red-500 text-white rounded-md'>
                                                 Delete
                                             </button>
                                             <button className='btn bg-blue-500 text-white rounded-md'>

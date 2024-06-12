@@ -45,45 +45,9 @@
   ],
   "products": [
     {
-      "id": "533a",
-      "name": "Abc",
-      "price": "1",
-      "imageUrl": "1"
-    },
-    {
-      "id": "a6d4",
-      "name": "Abc",
-      "price": "123",
-      "imageUrl": "Abc"
-    },
-    {
-      "id": "b03b",
-      "name": "Abc",
-      "price": "1",
-      "imageUrl": "Abc"
-    },
-    {
-      "id": "f001",
-      "name": "Abc",
-      "price": "1",
-      "imageUrl": "Abv"
-    },
-    {
       "id": "7e7e",
       "name": "Abc",
       "price": "1",
-      "imageUrl": "Abv"
-    },
-    {
-      "id": "74e0",
-      "name": "Abc",
-      "price": "1",
-      "imageUrl": "Abv"
-    },
-    {
-      "id": "8460",
-      "name": "Abc",
-      "price": "050000",
       "imageUrl": "Abv"
     }
   ]
