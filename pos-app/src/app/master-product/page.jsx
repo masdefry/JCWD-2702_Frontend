@@ -1,7 +1,7 @@
 'use client';
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import { createProductSchema } from './../../features/schemas/createProductSchema';
-import { useMutation } from '@tanstack/react-query';
+import { useMutation, useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import {toast} from 'react-toastify'
 
@@ -18,7 +18,17 @@ export default function MasterProductPage(){
             console.log(err)
         }
     })
-    
+
+    const {data: dataProducts} = useQuery({
+        queryFn: async() => {
+            const res = await axios.get('http://localhost:5000/products')
+            return res.data
+        }
+    })
+
+    // Conditional Rendering untuk Menghindari dataProducts yang Masih Undefined
+    if(dataProducts === undefined) return <div>Loading...</div>
+
     return(
         <main className='flex flex-col items-center py-5'>
             <section className='py-10'>
@@ -89,20 +99,26 @@ export default function MasterProductPage(){
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th>1</th>
-                            <td>Cy Ganderton</td>
-                            <td>Quality Control Specialist</td>
-                            <td>Blue</td>
-                            <td>
-                                <button className='btn bg-red-500 text-white rounded-md'>
-                                    Delete
-                                </button>
-                                <button className='btn bg-blue-500 text-white rounded-md'>
-                                    Update
-                                </button>
-                            </td>
-                        </tr>
+                        {
+                            dataProducts.map((item, index) => {
+                                return(
+                                    <tr>
+                                        <th>1</th>
+                                        <td>Cy Ganderton</td>
+                                        <td>Quality Control Specialist</td>
+                                        <td>Blue</td>
+                                        <td>
+                                            <button className='btn bg-red-500 text-white rounded-md'>
+                                                Delete
+                                            </button>
+                                            <button className='btn bg-blue-500 text-white rounded-md'>
+                                                Update
+                                            </button>
+                                        </td>
+                                    </tr>
+                                )
+                            })
+                        }
                     </tbody>
                 </table>
             </section>
