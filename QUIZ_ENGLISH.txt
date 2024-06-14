@@ -1,0 +1,207 @@
+1. The technology commonly used to defined the structure and content of web pages is ?
+a. ReactJs
+b. HTML
+c. NextJS
+d. CSS
+
+2. What is commonly used to provide interactivity on web pages?
+a. Javascript
+b. HTML5
+c. CSS 
+d. HTML 
+
+3. What are pseudo-element in CSS, and how are they used?
+a. There is no correct asnwer.
+b. Pseudo-element are elements that only appear after hovering over the element, and they have an active effect on that element.
+c. Pseudo-element are elements that appear after the selected element in CSS ad are used for specifc styling.
+d. Pseudo-element are elements that can only be accessed through javascript.
+
+4. What is `CSS Flexbox` and how is it used to layout elements on a web page?
+a. CSS Flexbox is a method for positioning element layout such as fixed, sticky, and absolute.
+b. CSS Flexbox is a method for arranging background images within HTML elements.
+c. CSS Flexbox is a method for arranging the layout elements in one dimension (row or column) flexibly
+d. CSS Flexbox is a method used for form validation in CSS.
+
+5. What is meant by `props drilling` in the context of React ?
+a. Props drilling is a technique or method for passing props in React
+b. Props drilling is a way to organize prop data in a structured and efficient manner
+c. Props drilling is the process of passing props data through multiple layers of component, which can make the code inefficient.
+d. Props drilling is a method for passing props from child component to parent component in react, making the code efficient.
+
+6. How do you use `useMemo` in React to optimize the performance of a component that fetches data from an external API?
+a. useMemo is used to avoid re-fetching data from the API every time the component re-renders.
+b. useMemo is used to efficiently fetch data from the API every time the component re-renders.
+c. useMemo is used to manage the rendering of React components.
+d. useMemo cannot be used to optimize data fetching from an API.
+
+7. Why is `useReducer` often used for state management instead of `useState` in more complex situations?
+a. useReducer is simpler than useState in its implementation
+b. useReducer separates state updates from the component, making it easier to manage complex state.
+c. useState separates state updates from the component, making it easier to manage complex state.
+d. There is no correct answer.
+
+8. How do React components interact with state managed by redux?
+a. React component dispatch actions to redux, which then updates the state.
+b. React component can change state by using setState on redux
+c. React component cannot interact with redux state.
+d. React component dispatch actions to redux, which are then processed reducers to update the state.
+
+9. What is middleware in redux, and how are they used?
+a. Middleware is a method used to process actions before they reach the reducers in redux, such as logging or sending data to a server.
+b. Middleware is a function used by redux to optimize rendering views of components in react.
+c. Middleware is a component in redux that efficiently connects state to react components
+d. Middleware is a method for managing useState in redux
+
+10. In a Next JS App Router, can we easily write static metadata on ?
+a. Custom Hooks
+b. page.js or layout.js 
+c. Navbar 
+d. Footer 
+
+11. Why should you avoid copying prop values into the component state?
+a. Because it would create two instance with the same state, which could lead to state desynchronization.
+b. Because it would lead to duplicate instances with different state, while state synchronization remains intact but it consume a lot of memory.
+c. Because the mutation process on state does not allow such mutation processes
+d. Because props values cannot be stored by the state in that component
+
+12. Which of the following statements is correct regarding page navigation in a Next JS project?
+a. Using Link from next/link is good for SEO performance because page transition links cannot be detected by crawlers.
+b. Using Link from next/link is very good for SEO performance because page transition links can be detected by crawlers and have SPA behavior.
+c. router.push is used for page navigation, which is very good for SEO performance because page transition links can be detected by crawlers and have SPA behavior
+d. There is no correct statement.
+
+13. What is useRef in react?
+a. useRef is a hook in react used to manage component state.
+b. useRef is a hook in react used to access and manipulate DOM elements.
+c. useRef is a hook in react used to convert a functional component into class component.
+d. useRef is a hook in react used to create actions and manipulate state.
+
+14. Whats is the main difference between useMemo and useState in react ?
+a. useState is used to access and manipulate DOM elements, while useMemo is used to compute memoized values.
+b. There is no difference between them, and they can be used intercahngeably
+c. useState is used to manage component state, while useMemo is used to compute memoized values and avoid repeated computations.
+d. useMemo is used to access and manipulate DOM elements, while useState is used to manage component state.
+
+15. You have a functional component in react that has several hooks
+/*
+    import {useState, useEffect} from 'react';
+
+    export default function Products(){
+        const [data, setData] = useState([]);
+        const [loading, setLoading] = useState(false);
+
+        useEffect(() => {
+            <!-- Lengkapi Code Disini -->
+        }, [])
+
+        return(
+            <>
+                <h1>
+                    Lists Products
+                </h1>
+                {
+                    loading?
+                        'Loading...'
+                    :
+                        <!-- Lengkapi Code Disini -->
+                }
+            </>
+        )
+    }
+*/
+Complete the following code:
+a. You should initialize data and loading with fake data from the start, and then update them when the actual data arrives.
+b. You should add and create a new state inside useEffect to manage data and loading because you cannot use useState outsidethe return. After that, make an HTTP request directly inside useEffect.
+c. You can directly use data and loading to display data in the UI without needing to use useEffect
+d. In useEffect, you will send a HTTP request using fetch to fetch data from the server and populate data with the response. When the data is received, you will change the loading value to false
+
+16. You want to access DOM elements in your react component. How would you use the useRef hook to achieve this?
+/*
+    import {useRef} from 'react';
+
+    export default function Form(){
+        const element = useRef()
+        const handleClick = () => {
+            ...
+        }
+        return(
+            <>
+                <div ref={elementRef} style={{backgroundColor: 'white'}}>
+                    Lists Products
+                </div>
+                <button onClick={handleClick}>
+                    Change Color
+                </button>
+            </>
+        )
+    }
+*/
+a. You can use elementRef.current.style.backgroundColor = 'blue' in the handleClick function to change the background color of the div element.
+b. You can use elementRef.current.style.color = 'blue' in the handleClick function to change the background color of the div element.
+c. You can use elementRef.style.backgroundColor = 'blue' in the handleClick function to change the background color of the div element
+d. You can use elementRef.style.color = 'blue' in the handleClick functon to change the background color of the div element.
+
+17. Consider the component below. What is the default color of the Icon component?
+/*
+    const Component = ({selected = false}) => {
+        return(
+            <Icon color={selected? 'green':'black'} />
+        )
+    }
+*/
+a. It returns an error code in the component
+b. Black 
+c. Green 
+d. There is no default value.
+
+18. Perhatikan code berikut ini! Berikut ini adalah lampiran code pada suatu project Next Js versi 14 dengan menggunakan app router.
+/*
+    import {useState} from 'react';
+
+    export default function Profile(){
+        const [data, setData] = useState(0)
+        
+        return(
+            <div>
+                <p>
+                    {data}
+                </p>
+                <button onClick={() => setData(data+1)}>
+                    Click Me!
+                </button>
+            </div>
+        )
+    }
+*/
+a. You need to define the page as server side using "use server" .
+b. You need to define the page as client side using "use client" .
+c. The use of useState must be accompanied by useEffect in that component.
+d. The Function in the onClick must be wrapped in seperate function and initialized above before calling it.
+
+19. Here is a functional component in react. Complete this code with the correct way to manage state and display the state value when the button is pressed.
+/*
+    import {useState} from 'react';
+
+    export default function Counter(){
+        <!-- Lengkapi Code Disini -->
+       
+
+        return(
+            <>
+                <p>Numbers: {/* Lengkapi Code Disini */}</p>
+                <button onClick={/* Lengkapi Code Disini */}>Increment</button>
+            </>
+        )
+    }
+*/
+
+a. Use this.state to initialize the count state and this.setState to update the state when the button is pressed
+b. Use state to initialized the count stae and setState, and use setState to update the state when the button is pressed.
+c. State is not required in functional component
+d. Use useState to initialize the count state and setCount, and use setCount to update the state when the button is pressed
+
+20. What is the main function of createSlice in redux toolkit, and why is it useful?
+a. createSlice is a method for creating an instance of a slice or redux store that helps with reducer work.
+b. createSlice is used to create a slice that encompasses actions in redux in one place
+c. createSlice is used to create a slice that encompasses reducer, action, and state updates in one place.
+d. There is no correct answer.

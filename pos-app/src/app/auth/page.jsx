@@ -12,6 +12,11 @@ import {useState} from 'react';
 import { useDispatch } from 'react-redux';
 import {setUser} from '@/redux/slices/userSlice';
 
+// Setup Auth with Google
+import {GoogleAuthProvider, signInWithPopup} from 'firebase/auth';
+import { auth } from '@/firebase.js';
+const googleProvider = new GoogleAuthProvider()
+
 export default function AuthPage(){
     // Step-02 Setup Redux
     const dispatch = useDispatch()
@@ -38,6 +43,15 @@ export default function AuthPage(){
             toast.error(error.message)
         }finally{
             setIsLoading(false)
+        }
+    }
+
+    const onLoginWithGoogle = async() => {
+        try{
+            const response = await signInWithPopup(auth, googleProvider)
+            console.log(response)
+        }catch(error){
+            console.log(error)
         }
     }
 
@@ -81,6 +95,14 @@ export default function AuthPage(){
                         }
                     }
                 </Formik>
+                <section className='flex flex-col items-center py-3'>
+                    <h1>
+                        Or
+                    </h1>
+                    <button onClick={onLoginWithGoogle} type='submit' className='btn bg-blue-500 text-white w-full mt-5'>
+                        Login with Google
+                    </button>
+                </section>
             </div>
         </section>
     )
